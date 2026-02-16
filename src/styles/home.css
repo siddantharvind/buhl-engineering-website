@@ -1,0 +1,192 @@
+:root {
+  --navy: #001220;
+  --cream: #FDFBD4;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/images/hero.png') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--navy) 0%, transparent 40%, var(--navy) 95%);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 850px;
+  animation: reveal 2.5s ease-out;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+.content h1 {
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.content p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.8;
+}
+
+.cta-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--cream);
+  color: var(--navy);
+  padding: 1.2rem 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--cream);
+}
+
+.cta-btn:hover {
+  background: transparent;
+  color: var(--cream);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(253, 251, 212, 0.1);
+}
+
+.home-footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+  z-index: 4;
+  text-transform: uppercase;
+}
+
+/* Mobile Rollback Logic */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 12vh;
+  }
+
+  .bg-image {
+    background-position: center 30%;
+    background-size: cover;
+  }
+
+  .badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+  }
+
+  .content h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    margin-bottom: 2rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 1rem 2rem;
+  }
+
+  .home-footer {
+    font-size: 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+    padding-bottom: 15vh;
+  }
+
+  .badge {
+    font-size: 0.55rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.25em;
+  }
+
+  .content h1 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .content p {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .cta-btn {
+    font-size: 0.75rem;
+    padding: 0.9rem 1.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .home-footer {
+    font-size: 0.5rem;
+    bottom: 1rem;
+    letter-spacing: 0.2em;
+  }
+}

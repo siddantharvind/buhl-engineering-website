@@ -1,0 +1,79 @@
+---
+// Footer Component
+---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/careers">Careers</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 Buhl Engineering. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  :root {
+    --navy: #001220;
+    --cream: #FDFBD4;
+    --cream-dim: rgba(253, 251, 212, 0.7);
+    --cream-dimmer: rgba(253, 251, 212, 0.4);
+  }
+
+  footer {
+    border-top: 1px solid rgba(253, 251, 212, 0.1);
+    padding: 3rem 4rem;
+    text-align: center;
+    background-color: var(--navy);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--cream-dimmer);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: var(--cream);
+  }
+
+  .footer-copyright {
+    color: var(--cream-dimmer);
+    font-size: 0.85rem;
+  }
+
+  .footer-copyright p {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 2rem;
+    }
+
+    .footer-links {
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>

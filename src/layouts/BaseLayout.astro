@@ -1,0 +1,82 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  logoImage?: string;
+}
+
+const { title, description = 'Buhl Engineering', logoImage = '/assets/images/logo.png' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Buhl Engineering, maritime engineering, blue economy, sovereign maritime, indigenous technology, subsea technology, precision engineering" />
+    <meta name="author" content="Buhl Engineering" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#001220" />
+    
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://buhlengineering.in" />
+    <meta property="og:image" content="https://buhlengineering.in/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Buhl Engineering" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://buhlengineering.in/assets/images/og-image.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://buhlengineering.in" />
+    
+    <!-- Mobile Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Buhl Engineering" />
+    
+    <title>{title}</title>
+    <link rel="icon" href="/assets/favicons/favicon-light.png" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/assets/favicons/favicon-dark.png" media="(prefers-color-scheme: light)" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://tally.so/widgets/embed.js"></script>
+    
+    <!-- JSON-LD Schema for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Buhl Engineering",
+      "description": "Sovereign maritime engineering for the blue economy",
+      "url": "https://buhlengineering.in",
+      "logo": "https://buhlengineering.in/assets/images/logo.png",
+      "email": "info@buhlengineering.in",
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "knowsAbout": ["Maritime Engineering", "Blue Economy", "Subsea Technology", "Precision Engineering"]
+    }
+    </script>
+  </head>
+  <body>
+    <Header logoImage={logoImage} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
